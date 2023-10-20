@@ -1,0 +1,212 @@
+.container-garage {
+    display: flex;
+    flex-direction: column;
+}
+
+.count-cars {
+    position: relative;
+}
+
+.count-cars::after {
+    position: absolute;
+    content: '';
+    right: -7vw;
+    width: 5vw;
+    height: 6vw;
+    background-image: url('../images/car.gif');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+input[type='text'] {
+    padding: 1vw;
+    border: 2px solid var(--input-border);
+    border-radius: 5px;
+    font-size: 0.9vw;
+    width: 13vw;
+    height: 2vw;
+    color: var(--input-color);
+    background-color: var(--input-background);
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type='text']:disabled {
+    border: 2px solid var(--11);
+    color: var(--8);
+    background-color: var(--9);
+}
+
+input[type='text']:focus {
+    border-color: var(--4);
+    background-color: var(--7);
+}
+
+input[type='color']:not([disabled='']) {
+    cursor: pointer;
+}
+
+input[type='color'] {
+    width: 2vw;
+    height: 2vw;
+    padding: 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+input[type='color']::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+input[type='color']::-webkit-color-swatch {
+    border: 2px solid var(--2);
+    border-radius: 50%;
+}
+
+input[type='color']:not([disabled=''])::-webkit-color-swatch:hover {
+    border: 2px solid var(--5);
+}
+
+.garage-page:not(.cover) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: -1.2vw;
+    flex: 1 1 auto;
+}
+
+.generate-cars {
+    width: 24vw;
+    margin-bottom: 2vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.zone-create,
+.zone-update,
+.zone-control {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 0.7vw;
+}
+
+.container-car,
+.car {
+    display: flex;
+    flex-direction: column;
+}
+
+.car {
+    border-bottom: 0.35vw dotted var(--road);
+}
+
+.car-options,
+.car-control {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0.4vw;
+    align-items: center;
+}
+
+.car-options_title {
+    display: block;
+    color: var(--model);
+    font-size: 1.4vw;
+    margin: 0.2vh 2vw;
+    padding-left: 1vw;
+    font-weight: bold;
+    border-left: 1px solid var(--16);
+}
+
+.car-control_start,
+.car-control_stop {
+    width: 3.4vw;
+    margin-right: 0.3vw;
+    padding: 0.2vw;
+    background-color: var(--button-background);
+    color: var(--button-color);
+    border: 1px solid var(--button-color);
+    font-size: 1vw;
+    border-radius: 8px;
+}
+
+.car-img {
+    margin-left: 1vw;
+    position: relative;
+}
+
+.car-img::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5vw;
+    left: -1.6vw;
+    width: 120%;
+    height: 1vw;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+.car-img svg,
+.car-img-win svg {
+    padding: 0;
+    margin: 0 0 -0.7vw 0;
+}
+
+.flag {
+    margin-left: 60vw;
+    height: 4vw;
+    width: 6vw;
+    bottom: 3vw;
+    background-image: url('../images/flag.gif');
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+}
+
+.flag::before {
+    content: '';
+    position: absolute;
+    left: -2.2vw;
+    bottom: -3.1vw;
+    height: 6vw;
+    width: 7vw;
+    background-image: url('../images/pngwing.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+.winner-notice {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.winner-notice.win {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    color: var(--win-text);
+    font-size: 2.9vw;
+    font-weight: 500;
+    background-color: rgba(255, 255, 255, 0.755);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 0.5s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translate(-50%, -60%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,28 @@
+:root {
+    --1: #a28761;
+    --2: #bea9a5;
+    --3: #65581b;
+    --4: #c96256;
+    --5: #ab3938;
+    --6: #605754;
+    --7: #ddd7cc;
+    --8: #242709b1;
+    --9: #95928e;
+    --10: #a14322;
+    --11: #938380;
+
+    --background: #272b0a;
+    --main-text: #a28761;
+    --button-background: #c89880;
+    --button-color: #242709b1;
+    --button-border: #a28761;
+    --input-background: #cac4b9;
+    --input-color: #272b0a;
+    --input-border: #a28761;
+    --title: #c96256;
+    --model: #ab3938;
+    --win-text: #c96256;
+    --road: #c96256;
+    --table-color: #bea9a5;
+    --table-frame: #454635;
+}

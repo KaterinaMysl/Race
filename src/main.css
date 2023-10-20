@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+Office:ital,wght@0,300;0,500;1,400&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--main-text);
+    margin: 0;
+    font-family: 'Ysabeau Office', sans-serif;
+}
+
+.header {
+    width: 100%;
+}
+
+.race-app {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-height: 100%;
+}
+
+.page {
+    width: 100%;
+    padding: 0 4vw;
+}
+
+.title {
+    color: var(--title);
+}
+
+h1 {
+    font-size: 2.3vw;
+    margin: 0.4vh 0;
+    position: relative;
+}
+
+h3 {
+    font-size: 1.3vw;
+    margin: 0.6vw 0;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin: 2vw 2vw 0;
+}
+
+button:not([disabled='true'], [disabled='disabled'], [disabled='']) {
+    cursor: pointer;
+}
+
+.buttons:not(.button_garage, .button_winner) {
+    width: 6.5vw;
+    padding: 0.5vw 0.6vw 0.3vw;
+    margin-right: 5px;
+    text-transform: uppercase;
+    font-size: 0.8vw;
+    font-weight: bold;
+    border-radius: 30px;
+}
+
+button:not(
+        .button_garage,
+        .button_winner,
+        .button-race,
+        .button-reset,
+        .button-generate_cars,
+        .button-update,
+        .button-create,
+        [disabled='true'],
+        [disabled='disabled']
+    ) {
+    background-color: var(--background);
+    border: 1.5px solid var(--button-border);
+    color: var(--button-border);
+}
+
+button:not(
+        .button_garage,
+        .button_winner,
+        .button-race,
+        .button-reset,
+        .button-generate_cars,
+        .button-update,
+        .button-create,
+        [disabled='true'],
+        [disabled='disabled'],
+        [disabled],
+    ):hover {
+    background-color: var(--2);
+}
+
+.button_garage,
+.button_winner {
+    margin: 0 0.5vw;
+    display: inline-block;
+    padding: 1vw 2vw;
+    border: none;
+    border-radius: 30px;
+    color: var(--button-color);
+    font-size: 1.1vw;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, var(--1), var(--2));
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease, transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.button_garage::before,
+.button_winner::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: skewY(-45deg);
+    transition: top 0.3s ease;
+}
+
+.button_garage:hover::before,
+.button_winner:hover::before {
+    top: 0;
+}
+
+.button_garage:active,
+.button_winner:active {
+    background: linear-gradient(135deg, var(--4), var(--10));
+    transform: scale(0.95);
+}
+
+.button-race,
+.button-reset,
+.button-generate_cars,
+.button-update,
+.button-create {
+    display: inline-block;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 30px;
+    color: var(--button-color);
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: var(--3);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    background-color: var(--button-background);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.button-race:not([disabled='disabled'])::before,
+.button-reset:not([disabled=''], [disabled='disabled'])::before,
+.button-generate_cars::before,
+.button-update:not([disabled=''])::before,
+.button-create::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: skewX(-20deg);
+    transition: left 0.3s ease;
+}
+
+.button-race:not([disabled='disabled']):hover::before,
+.button-reset:not([disabled=''], [disabled='disabled']):hover::before,
+.button-generate_cars:hover::before,
+.button-update:not([disabled='']):hover::before,
+.button-create:hover::before {
+    left: 100%;
+}
+
+.button-race:not([disabled='disabled']):active,
+.button-reset:not([disabled=''], [disabled='disabled']):active,
+.button-generate_cars:active,
+.button-update:not([disabled='']):active,
+.button-create:active {
+    transform: scale(0.95);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+button[disabled] {
+    background-color: var(--9);
+    color: var(--8);
+    border: 1.5px solid var(--11);
+}
+
+.paginat {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin: 2vw;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1vw 4vw 2vw;
+    font-size: 1.5vw;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+.info-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.link-github {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--main-text);
+}
+
+.year {
+    margin-right: 70px;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    padding-left: 5vw;
+    height: 3vw;
+    width: 100%;
+    background-image: url('images/github.jpg');
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    background-size: 3vw auto;
+}
+
+.link-school img {
+    width: 7vw;
+}
+
+.school-icon {
+    filter: invert(100%);
+}
+
+.cover {
+    display: none;
+}
+
